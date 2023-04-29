@@ -34,10 +34,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      appBar: AppBar(title: const Text('App Bar'), actions: [IconButton(onPressed: () {GoRouter.of(context).go('/login');}, icon: const Icon(Icons.arrow_back_ios))],),
+      body: 
+      Center(
         child: Text('Hello World!'),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: () {}, child: Icon(Icons.call),),
     );
   }
 }
@@ -50,6 +53,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
+          BoxDecoration()
           const Text("Login Page"),
           ElevatedButton(
             onPressed: () {
